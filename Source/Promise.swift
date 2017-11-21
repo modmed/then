@@ -79,6 +79,7 @@ public class Promise<T>: AsyncType {
             sb(result)
         }
         blocks.finally()
+        blocks = PromiseBlocks<T>()
         initialPromiseStart = nil
     }
     
@@ -88,6 +89,7 @@ public class Promise<T>: AsyncType {
             fb(anError)
         }
         blocks.finally()
+        blocks = PromiseBlocks<T>()
         initialPromiseStart = nil
     }
 }
